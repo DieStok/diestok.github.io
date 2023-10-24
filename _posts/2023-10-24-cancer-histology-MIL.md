@@ -1,5 +1,3 @@
-
-
 ---
 title: 'Youtube lecture notes #1: (hilarious) multiple-instance learning on cancer histopathology slides flash talk'
 date: 2023-10-24
