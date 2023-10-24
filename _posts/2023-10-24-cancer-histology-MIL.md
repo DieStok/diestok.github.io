@@ -3,7 +3,7 @@
 ---
 title: 'Youtube lecture notes #1: (hilarious) multiple-instance learning on cancer histopathology slides flash talk'
 date: 2023-10-24
-permalink: /posts/2023/10/blog-post-1/
+permalink: /posts/2023/10/cancer-histology-MIL/
 tags:
   - Youtube lecture notes
   - multiple-instance learning
