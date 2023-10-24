@@ -16,15 +16,15 @@ Link: [https://www.youtube.com/watch?v=zOD2Wt0pTRQ](https://www.youtube.com/watc
 
 ## TL;DR
 
-· Multiple-instance learning is a problem where there is some top-level labeled object (a patient who is a responder or non-responder to some drug, say, or a huge pathology image slide which as a whole either has cancer tissue or not) which is made up of component parts that we measure, but none of which individually per se lead to the top-level label (for flow cytometric measurements of immune cells in Acute Lymphoblastic Leukemia: a patient as a bag of cells, some of which are malignant; for tissue slides: slide image tiles that together make up the whole image, where some might have tumor material whereas others have none).
+* Multiple-instance learning is a problem where there is some top-level labeled object (a patient who is a responder or non-responder to some drug, say, or a huge pathology image slide which as a whole either has cancer tissue or not) which is made up of component parts that we measure, but none of which individually per se lead to the top-level label (for flow cytometric measurements of immune cells in Acute Lymphoblastic Leukemia: a patient as a bag of cells, some of which are malignant; for tissue slides: slide image tiles that together make up the whole image, where some might have tumor material whereas others have none).
 
-· In cancer histopathology slide classification, the data is simply too large to be processed all at once. Hence, we must resort to cutting the image up into tiles, and working on those.
+* In cancer histopathology slide classification, the data is simply too large to be processed all at once. Hence, we must resort to cutting the image up into tiles, and working on those.
 
-· However, tile-based methods suffer from important drawbacks: they are weakly labeled (slide-level labels like cancer/not-cancer don’t translate to tile-level labels), and miss spatial context.
+* However, tile-based methods suffer from important drawbacks: they are weakly labeled (slide-level labels like cancer/not-cancer don’t translate to tile-level labels), and miss spatial context.
 
-· Self-supervised representation learning, such as contrastive learning methods, can use encoder-decoder architectures combined with losses to bring encoded versions of the same tile with slightly different modifications (croppings/rotations/transformations/addition of random noise) close, while staying further from that of a different tile, to learn informative tile-level representations in much fewer dimensions (think 1,024*1,024*3 to 1,000) This requires no tile-level labels whatsoever.
+* Self-supervised representation learning, such as contrastive learning methods, can use encoder-decoder architectures combined with losses to bring encoded versions of the same tile with slightly different modifications (croppings/rotations/transformations/addition of random noise) close, while staying further from that of a different tile, to learn informative tile-level representations in much fewer dimensions (think 1,024*1,024*3 to 1,000) This requires no tile-level labels whatsoever.
 
-· With this learned dimensionality reduction in hand, we can encode all tiles of a top-level image, stitch them back together, and use a second neural network to now do the classification based on these features. This means spatial context can be taken into account (the second model can learn these realtions) and that we now are back to the one sample : one label-scenario that we know and love.
+* With this learned dimensionality reduction in hand, we can encode all tiles of a top-level image, stitch them back together, and use a second neural network to now do the classification based on these features. This means spatial context can be taken into account (the second model can learn these realtions) and that we now are back to the one sample : one label-scenario that we know and love.
 
 ## Introduction  
 Welcome to the first installment of Youtube lecture notes, where I make a write-up of an interesting Youtube lecture.  
@@ -58,9 +58,9 @@ Let’s say you train on this per-tile level anyway. You get a per-tile classifi
 
 So there’s two main problems here:
 
-1: We can’t deal with whole images at once. However, training a tile-level classifier is difficult: many tiles are not informative for the top-level label, and you miss context (since you remove spatial information by acting like a slide is a bag of images).
+1. We can’t deal with whole images at once. However, training a tile-level classifier is difficult: many tiles are not informative for the top-level label, and you miss context (since you remove spatial information by acting like a slide is a bag of images).
 
-2: if you manage to train a tile-level classifier, how to aggregate the results depends on your exact question and domain expertise, making this a difficult and fraught process.
+2. if you manage to train a tile-level classifier, how to aggregate the results depends on your exact question and domain expertise, making this a difficult and fraught process.
 
 ## Contrastive learning to the rescue  
 Contrastive learning can ease these issues. Contrastive learning is one of the main classes of methods in self-supervised (representation) learning (SSRL), the other one being masking (such as used in Large Language Models. see [here](https://ieeexplore.ieee.org/abstract/document/9770283) for a great overview of SSRL. The approach simply boils down to the intuition that different (noisy/cropped/transformed) versions of the same image (patch) should lead to more similar neural-network based feature encodings than that of another patch, no matter what the label. Below, an example is given of two different croppings of one image (a cute cat), which should be different from that of another image ( a cute dog). We can implement this without labels: it would hold even if the image on the right were of another cat: different image croppings of the same cat should be more similar to each other than to those of another cat. We could do the same thing with pathology slide image tiles!
