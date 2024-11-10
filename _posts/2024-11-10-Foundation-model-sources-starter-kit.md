@@ -1,6 +1,6 @@
 ---
 title: 'Foundation model sources starter kit'
-date: 2024-10-11
+date: 2024-11-10
 permalink: /posts/2024/11/foundation-model-links/
 tags:
   - Foundation models
