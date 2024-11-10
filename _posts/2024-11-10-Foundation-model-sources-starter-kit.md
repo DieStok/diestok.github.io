@@ -1,6 +1,6 @@
 ---
 title: 'Foundation model sources starter kit'
-date: 10-11-24
+date: 24-11-10
 permalink: /posts/2024/11/foundation-model-links/
 tags:
   - Foundation models
@@ -12,7 +12,7 @@ tags:
 ---
 
 **Dieter Stoker**  
-*05-06-2024*
+*Originally created 05-06-2024 to onboard some new de Ridder lab members in the foundation model domain*
 
 Hi, thanks for clicking! I thought I’d make a nice collection of resources that I find pertinent ~halfway through 2024 in the field of BioML, with a slant towards foundation models and good educational materials. This is a reproduction of my Notion page [here](https://nebulous-booth-32c.notion.site/Foundation-models-tips-and-links-432e39f183e242ba9a144df1357189a1)
 
