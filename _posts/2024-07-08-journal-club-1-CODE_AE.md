@@ -38,7 +38,7 @@ Before we begin, let's set the stage. We throw the term data deluge around willy
 
 ## What else?
 
-Besides Nespresso (thanks Clooney, very cool), a what else here is that I am not currently writing a long-form explanation of the TL;DR, but want to make the basics available.  
+Besides Nespresso (thanks Clooney, very cool), a what else here is that I am not currently writing a long-form explanation of the TL;DR, but wanted to make my view on the basic results of this paper available.   
 
 
 
