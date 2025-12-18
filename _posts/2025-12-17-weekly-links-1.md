@@ -80,4 +80,4 @@ Interesting set of papers on the universality of learned representations in neur
 
 Really nice zoom-in on the particulars of pandas. Some massive speed-ups are easily obtained if you know what's going on. I always naively used iterrows when I needed to, while itertuples does almost the same thing while being _much_ faster. Check out [Chip's blog](https://huyenchip.com/blog/) for more gems on genAI and LLMs. 
 
-
+---
