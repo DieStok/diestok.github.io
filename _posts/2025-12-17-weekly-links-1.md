@@ -1,18 +1,17 @@
 ---
-title: 'Weekly Links #[NUMBER]: [OPTIONAL THEME/TITLE]'
+title: 'Weekly Links #1: [OPTIONAL THEME/TITLE]'
 date: YYYY-MM-DD
 permalink: /posts/2025/12/weekly-links-1/
 tags:
   - weekly links
   - LLM
-  - 
 ---
 
 I scan all together too many papers, blog posts, and websites, so I figured I would make it mildly useful by making a selection of what I've read in the past week that may be interesting. From papers, to tech blogs, to LLMs, anything is game. Here is this week's post, and may it become a nice tradition. Happy reading!
 
 ---
 
-## 1. [Link Title/Paper Title]
+## 1. Oopsie for fMRI
 
 **Link:** https://www.nature.com/articles/s41593-025-02132-9#Ack1
 
