@@ -1,6 +1,6 @@
 ---
-title: 'Weekly Links #1: [OPTIONAL THEME/TITLE]'
-date: YYYY-MM-DD
+title: 'Weekly Links #1'
+date: 2025-12-17
 permalink: /posts/2025/12/weekly-links-1/
 tags:
   - weekly links
