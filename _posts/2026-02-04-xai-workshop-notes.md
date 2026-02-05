@@ -31,7 +31,7 @@ academic cultures and suppositions about prior knowledge and what is easily unde
 
 ### Shapley Values with Bayesian Uncertainty Quantification for Rule Ensembles — Marjolein Fokkema
 
-#### Main takeaways:
+#### My takeaways:
 * Can define rules based on interactions in tree-based models: use splits the trees learned as variables in a linear regression
 * Now the generalized linear model has the explainability of linear terms + power of non-linear tree-based rules, but you can still reason about these rules
 * Shapley values usually provide local or global importance of features, but not uncertainty estimates around their values (i.e. point estimates rather than Bayesian)
@@ -78,7 +78,7 @@ Joint Age + Sex effect --> Shapley values, separated by gender, Shapley value of
 
 ### [A Principled Approach for Comparing Variable Importance](https://arxiv.org/abs/2507.17306) — Angel Reyero Lobo
 
-#### Main takeaways:
+#### My takeaways:
 * To be very honest I did not get this talk at all. It seems to have unified variable selection and variable importance literatures in some way, but it flew over my head. Coprolite happens.
 * It felt not very useful, or like the axiom used presupposed the conclusion, but that may be my misunderstanding. 
 
@@ -113,7 +113,7 @@ Full disclosure: so statistical that I do not understand it at all.
 
 ### Asymmetric Shapley Values to Quantify the Importance of Genes in Clinico-Genomic Applications — Jeroen Goedhart
 
-#### Takeaways:
+#### My takeaways:
 * If you have some causal model you can condition your Shapley values based on that --> get asymmetric Shapley values.
 * May be useful in for instance combining clinical data with high-dim omics: gene expression causes the observed clinical variables, which in the end together leads to a certain survival time
 * With these asymmetric Shapley values you can capture this, and more properly investigate how much adding omics information adds to the performance of your model: otherwise the clinical variable, since it is lower-dimensional and easier to model, can get more weight in the importance attribution.
@@ -154,7 +154,7 @@ My thoughts:
 
 ### [A Causal Perspective on Shapley Values](https://arxiv.org/abs/2011.01625) — Ioan Gabriel Bucur
 
-#### Main takeaways:
+#### My takeaways:
 * If you have a causal model of some sort, incorporate it into the Shapley value calculation for better results (that's what I got out of it.)
 
 Messy notes:
@@ -184,7 +184,7 @@ Another extension to Shapley values: [rational Shapley values}(https://dl.acm.or
 
 ### Using Explainable ML for Assessing Treatment Effect Heterogeneity in Clinical Trials — Konstantinos (Kostas) Sechidis
 
-#### Main takeaways:
+#### My takeaways:
 * [Stellar explanation of Shapley values](https://www.youtube.com/watch?v=aThG4YAFErw)
 * Great application of causal/explainable model to an actual problem: are there heterogeneous treatment effects in clinical trials, or not? 
 * Clinical trials are actually underpowered to detect this, and if you see assertions about subgroups they usually don't replicate.
@@ -244,7 +244,7 @@ In doubly robust learner the final CATE (averaged treatment effects) is just a s
 
 ### Functional Decomposition of Tree-Based Models — Marvin Wright
 
-#### Main takeaway:
+#### My takeaways:
 * If you have 3 features and you compute Shapley feature importances, there are actually importances for each feature individually but also for the features in combination. For the normal values, the importance of combos of feature 1 and 2 is equally distributed over feature 1 and 2, so you only get first-order importances (for individual variables). But you could do full functional decomposition: how important is feature 1, feature 2, feature 3, feature 1 and 2, feature 2 and 3, feature 1 and 3, and feature 1,2,3 together. 
 * Problems are that you very quickly have infinitely many components (exponential in number of features) and that the right hand side of the functional decomposition is not unique: you could give a bit more importance to feature 1 and 3 and a bit less to feature 2 and 3 and get the same overall outcome. 
 * Apparently with gradient-boosted trees, because they are additive and not too deep this problem is somewhat averted and you can do it.
@@ -329,7 +329,7 @@ The normal shap package is doing interventional shapley values, while they are d
 
 ### Is My Model Perplexed for the Right Reason? Contrasting LLMs' Benchmark Behavior with Behavior Specified via Token-Level Perplexity — Giovanni Cinà
 
-#### Takeaways:
+#### My takeaways:
 * Testing on the token level with a specific metric: does an LLM really understand certain linguistic concepts
 * Basically, benchmarks for linguistic concepts are behaviourist, but can we also make quantitative metrics that we predefine, and check at this more precise level? 
 * Example: made a dataset where they swapped in the prompt ambiguous and unambiguous sentences, and measured whether the LLM had perplexity on the right token.
